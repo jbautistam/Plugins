@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Bau.Libraries.BauMvvm.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ControllerWindow.cs" />
+    <Compile Remove="Controllers\IControllerWindow.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\LibHelper.Standard\LibHelper.Standard.csproj" />
+    <ProjectReference Include="..\..\..\Common\LibMarkup.Standard\LibMarkup.Standard.csproj" />
+    <ProjectReference Include="..\..\MVVM\BauMvvm.ViewModels\BauMvvm.ViewModels.csproj" />
+  </ItemGroup>
+</Project>

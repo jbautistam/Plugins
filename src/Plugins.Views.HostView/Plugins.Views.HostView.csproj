@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1B96AF7-7847-4FBA-8054-7FA03910B7FD}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>Bau.Libraries.Plugins.Views.HostView</RootNamespace>
+    <AssemblyName>Plugins.Views.HostView</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DataTemplateManager.cs" />
+    <Compile Include="Controllers\PluginsManager.cs" />
+    <Compile Include="HostPluginsController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModels\AvalonLayout\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\AvalonLayout\EmptyViewModel.cs" />
+    <Compile Include="ViewModels\AvalonLayout\LayoutDockingController.cs" />
+    <Compile Include="ViewModels\AvalonLayout\LayoutDockingEventArgs.cs" />
+    <Compile Include="ViewModels\AvalonLayout\PaneViewModel.cs" />
+    <Compile Include="ViewModels\AvalonLayout\ToolViewModel.cs" />
+    <Compile Include="ViewModels\HostPluginsLayoutController.cs" />
+    <Compile Include="ViewModels\Tools\Errors\ErrorItemListViewModel.cs" />
+    <Compile Include="ViewModels\Tools\Log\LogItemListViewModel.cs" />
+    <Compile Include="ViewModels\Tools\Log\LogProgressItemListViewModel.cs" />
+    <Compile Include="ViewModels\Tools\Log\LogProgressItemViewModel.cs" />
+    <Compile Include="ViewModels\Tools\TextFiles\TextFileViewModel.cs" />
+    <Compile Include="ViewModels\WebBrowser\WebBrowserViewModel.cs" />
+    <Compile Include="Views\Tools\Dialogs\InputBoxView.xaml.cs">
+      <DependentUpon>InputBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools\Errors\ListErrorView.xaml.cs">
+      <DependentUpon>ListErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools\Graphical\ImageView.xaml.cs">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools\Log\ListLogProgressView.xaml.cs">
+      <DependentUpon>ListLogProgressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools\Log\ListLogView.xaml.cs">
+      <DependentUpon>ListLogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools\TextFiles\TextFileHelpView.xaml.cs">
+      <DependentUpon>TextFileHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tools\TextFiles\TextFileView.xaml.cs">
+      <DependentUpon>TextFileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WebBrowsers\WebBrowserView.xaml.cs">
+      <DependentUpon>WebBrowserView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Controls\WPF\BauControls\BauControls.csproj">
+      <Project>{c4411755-086a-464b-a62d-be0ccd18efb9}</Project>
+      <Name>BauControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Controls\WPF\BauMVVMControls\BauMVVMControls.csproj">
+      <Project>{4b98b2a6-084c-497f-92c8-18211913e93c}</Project>
+      <Name>BauMVVMControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Controls\WPF\CodeEditor\CodeEditor.csproj">
+      <Project>{4e07699f-5bd6-41c5-a42e-928a2aa332fc}</Project>
+      <Name>CodeEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\LibHelper.Standard\LibHelper.Standard.csproj">
+      <Project>{7ebd3639-82be-4744-9ec2-92a34d1d4a51}</Project>
+      <Name>LibHelper.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MVVM\BauMvvm.ViewModels\BauMvvm.ViewModels.csproj">
+      <Project>{2bbeb6ed-e4fa-4f4a-bb6f-ebf62f5155e8}</Project>
+      <Name>BauMvvm.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MVVM\BauMvvm.Views\BauMvvm.Views.csproj">
+      <Project>{ffa90cce-8c07-4a0f-a90c-3ed1b7b81e9c}</Project>
+      <Name>BauMvvm.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins.ViewModels\Plugins.ViewModels.csproj">
+      <Project>{fc4d01e4-ece1-4346-a2b2-d305e746ea28}</Project>
+      <Name>Plugins.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins.Views\Plugins.Views.csproj">
+      <Project>{aa000af7-9f53-426b-9a91-154d11513fa9}</Project>
+      <Name>Plugins.Views</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Tools\Dialogs\InputBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tools\Errors\ListErrorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tools\Graphical\ImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tools\Log\ListLogProgressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tools\Log\ListLogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tools\TextFiles\TextFileHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Views\Tools\TextFiles\TextFileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Views\WebBrowsers\WebBrowserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>3.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Composition">
+      <Version>1.0.31</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
